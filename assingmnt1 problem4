@@ -1,0 +1,16 @@
+def generate_pascals_triangle_row(k):
+  if k < 0:
+      return []
+  row = [0] * (k + 1)
+  row[0] = 1
+  for i in range(1, k + 1):
+      prev = 1
+      for j in range(1, i):
+          temp = row[j]
+          row[j] += prev
+          prev = temp
+      row[i] = 1
+      return row
+k = 3
+result = generate_pascals_triangle_row(k)
+print(result)
