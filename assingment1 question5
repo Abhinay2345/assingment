@@ -1,0 +1,14 @@
+def repeatedNumber(nums):
+  n = len(nums)
+  sum_expected = n * (n + 1) // 2
+  sum_squares_expected = n * (n + 1) * (2 * n + 1) // 6
+  sum_array = sum(nums)
+  sum_squares_array = sum(x ** 2 for x in nums)
+
+  B = (sum_expected - sum_array) + nums.count(nums) 
+  A = (sum_squares_expected - sum_squares_array) //(sum_expected - sum_array) 
+
+  return [A, B]
+input_array = [3, 1, 2, 5, 3]
+output = repeatedNumber(input_array)
+print(output)
